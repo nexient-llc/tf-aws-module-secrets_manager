@@ -20,12 +20,6 @@ repos:
     hooks:
       - id: terraform_fmt
       - id: terraform_validate
-      - id: terraform_docs
-        args:
-          - --hook-config=--path-to-file=README.md
-          - --hook-config=--add-to-existing-file=true
-          - --hook-config=--create-file-if-not-exist=true
-          - --args=--sort=false
   - repo: https://github.com/golangci/golangci-lint
     rev: v1.46.2
     hooks:
@@ -48,3 +42,8 @@ repos:
       - id: detect-secrets
         args: ["--baseline", ".secrets.baseline"]
         exclude: package.lock.json
+  - repo: https://github.com/terraform-docs/terraform-docs
+    rev: "v0.16.0"
+    hooks:
+      - id: terraform-docs-go
+        args: ["markdown", "table", "--output-file", "README.md", "./mymodule/path"]
