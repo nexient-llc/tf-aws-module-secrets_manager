@@ -46,4 +46,4 @@ repos:
     rev: "v0.16.0"
     hooks:
       - id: terraform-docs-go
-        args: ["markdown", "table", "--output-file", "README.md", "../tf-aws-module-secrets_manager"]
+        args: ["markdown", "table", "--output-file", "README.md", "/"]
