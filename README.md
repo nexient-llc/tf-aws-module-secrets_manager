@@ -19,3 +19,6 @@ module "database_username" {
   secret_value = var.database_username
 }
 ```
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
