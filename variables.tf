@@ -13,6 +13,7 @@
 // limitations under the License.
 
 variable "secret_path" {
+  type        = string
   description = "Path to create the secret under"
 }
 
