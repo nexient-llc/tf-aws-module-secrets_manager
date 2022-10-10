@@ -12,8 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-resource "random_string" "string" {
-  length  = var.length
-  number  = var.number
-  special = var.special
+resource "aws_secretsmanager_secret" "secret" {
+  name                    = var.secret_path
+  recovery_window_in_days = 0
+  tags                    = var.tags
+}
+
+resource "aws_secretsmanager_secret_version" "secret" {
+  secret_id     = aws_secretsmanager_secret.secret.id
+  secret_string = var.secret_value
 }

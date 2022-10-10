@@ -12,6 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-output "string" {
-  value = random_string.string.result
+output "id" {
+  description = "ID of the secret"
+  value       = aws_secretsmanager_secret.secret.id
+}
+
+output "arn" {
+  description = "ARN of the secret"
+  value       = aws_secretsmanager_secret.secret.id
+}
+
+output "sv_id" {
+  description = "A pipe delimited combination of secret ID and version ID"
+  value       = aws_secretsmanager_secret_version.secret.id
+}
+
+output "sv_arn" {
+  description = "The ARN of the secret"
+  value       = aws_secretsmanager_secret_version.secret.id
+}
+
+output "sv_version_id" {
+  description = "The unique identifier of the version of the secret"
+  value       = aws_secretsmanager_secret_version.secret.id
 }
